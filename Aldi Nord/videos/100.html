@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>100 Reasons Why I Love You</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+      color: #4b2e2e;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: rgba(255, 255, 255, 0.6);
+      backdrop-filter: blur(5px);
+      border-bottom: 2px solid #f8c8dc;
+    }
+
+    header h1 {
+      font-size: 3rem;
+      margin-bottom: 0.5rem;
+      color: #b30059;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #7a2f44;
+    }
+
+    .reasons-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1rem;
+      padding: 2rem;
+    }
+
+    .reason {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      position: relative;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .reason:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+    }
+
+    .reason::before {
+      content: "\2665";
+      position: absolute;
+      top: 15px;
+      right: 15px;
+      color: #ff5a78;
+      font-size: 1.5rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 1rem;
+      background-color: #ffe6ec;
+      color: #8b4b5a;
+      margin-top: 2rem;
+    }
+
+    .heart-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      overflow: hidden;
+      z-index: 9999;
+    }
+
+    .heart {
+      position: absolute;
+      color: #ff5a78;
+      font-size: 2rem;
+      animation: float 6s linear infinite;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-10vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+
+    .back {
+      display: inline-block;
+      margin: 1rem auto;
+      text-align: center;
+      width: 100%;
+      font-weight: bold;
+      color: #c44569;
+      text-decoration: none;
+    }
+
+    .back:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>100 Reasons Why I Love You</h1>
+    <p>From the deepest parts of my heart, here are all the ways you mean everything to me.</p>
+  </header>
+
+  <div class="reasons-container" id="reasons-container"></div>
+
+  <a class="back" href="../main.html">← Back to All</a>
+
+  <footer>
+    Made with endless love &hearts; Just for you <i>Aurora</i>.
+  </footer>
+
+  <div class="heart-animation" id="heart-animation"></div>
+
+  <script>
+    const reasons = `1. I love the way you see me, it feels like I am the only person in the world.
+2. You are the reason I wake up with a smile, hoping to hear or see you at any point of the day.
+3. Your kindness and generosity inspires me, its why I have always wanted to be real and honest with you.
+4. You are my closest one to heart, both my best friend and the love of my life.
+5. Your love feels like a safe haven, all I want is to be wrapped up in it forever.
+6. Your smile is so contagious that it lights up the darkest corners of my day.
+7. You are the reason I started believing in love again.
+8. Your touch is my happy place, calm, warm, and everything feels right.
+9. I love the way you support me in everything I do, even when I am uncertain.
+10. Your presence in my life is a gift I never want to let go of.
+11. Your heart is so pure, kind, and generous, I feel lucky to be part of your world.
+12. I am addicted to your hugs and hand holding, they heal more than words ever could.
+13. Your eyes sparkle like the night sky full of stars.
+14. Your smile is my daily dose of happiness.
+15. You make me feel like I belong, just by being near.
+16. I love how you understand me even in silence.
+17. You listen with your heart, not just your ears.
+18. The way you care for the little things, it makes me fall in love all over again.
+19. Your laugh feels like music that never gets old.
+20. You bring peace to my chaos.
+21. I love how you are not perfect and neither am I, but we fit perfectly together.
+22. You are the only one who can calm my storms with just a glance.
+23. Your presence feels like home.
+24. I love that I can be completely myself with you.
+25. Your voice is my favorite sound.
+26. You make the ordinary feel extraordinary.
+27. Every memory with you is a treasure I hold close.
+28. I love the way you remember the small details(only sometimes).
+29. You make me a better person just by loving me.
+30. I feel safe when I am with you, emotionally, mentally, physically.
+31. You have the most beautiful soul I have ever known.
+32. Your love is the warmest place I have ever rested in.
+33. I love the way you say my name in a sweet way.
+34. You make love feel simple, effortless, and real.
+35. I fall for you a little more every single day.
+36. Your touch lingers like a promise.
+37. I love how you make even silence feel full.
+38. You never let go of me, even when I push away.
+39. You have seen my worst and still love me like I am the best.
+40. You are my person, the one I turn to first, and last.
+41. I love how just one look from you can bring me back to myself.
+42. You celebrate my wins and hold me through my losses.
+43. I love how being with you feels like time pauses for just us.
+44. You love me in a language that only my soul truly understands.
+45. You bring out the softest parts of me.
+46. You are my peace after a long, hard day.
+47. You are not just part of my life, you are the life in it.
+48. You are the one I want to share every sunset with.
+49. I love your smell of yours, its comfort, its love, its you.
+50. You make me believe in forever.
+51. You are my favorite hello and my hardest goodbye.
+52. I love the way you look at me, like I am your whole world.
+53. You have made my heart softer, stronger, and fuller than I ever imagined it could be.
+54. Your loyalty means everything to me.
+55. I love the little quirks that make you, you.
+56. You are my hearts favorite place to rest.
+57. I can talk to you about anything without fear of being judged.
+58. I love how your energy fills a room and draws people in, especially me.
+59. You are not just in my life, you are woven into my soul.
+60. I love how we grow together, not apart.
+61. You love me with your whole heart, and I feel it every single day.
+62. I love how you hold me like you will never let go.
+63. You are the calm in the middle of my storm.
+64. I love the way you light up when you laugh.
+65. You are the one I want to come home to, always.
+66. Your love is the kind that writes poetry in my heart.
+67. I love your strength, not just physical, but emotional and spiritual.
+68. You understand me better than I understand myself sometimes.
+69. I love how you never let me feel alone.
+70. You make love feel like the safest thing in the world.
+71. You're the dream I never want to wake up from.
+72. You inspire me to be brave with my feelings.
+73. I love how you make even the worst days feel bearable.
+74. You are the light I didnt know I needed.
+75. You have touched parts of my heart that I didnt even know were still alive
+76. You have taught me that love isnt just a feeling, its a choice and I wouldd choose you every time.
+77. You're the reason love feels real to me.
+78. I love how you make even the silence between us feel like a language only we understand.
+79. You never let go, even when its hard.
+80. I love the way your presence lingers, even after you have gone.
+81. You bring magic into my every day, just by being in it.
+82. You are my second heartbeat.
+83. I love the way your emotions mirror mine, even unspoken.
+84. You make life taste sweeter.
+85. I love how you whispered "I love you" like its a secret meant only for me.
+86. I love the way your love wraps around me like a soft blanket on the coldest days.
+87. Your voice has the power to steady my heartbeat and ease my soul.
+88. You are the only one I want to grow old with.
+89. You understand my silences.
+90. I love how we can be weird together and it feels natural.
+91. You are the rhythm my heart has been waiting to dance to.
+92. You make me feel chosen, not out of need, but out of pure, intentional love.
+93. You make my world feel more colorful.
+94. I love that with you, forever doesnt feel long enough.
+95. You are the warmth in every cold moment.
+96. You are the best part of all my stories.
+97. I love how you never give up on us.
+98. You are everything I prayed for and more.
+99. You taught me how deep love can truly go.
+100. I love you endlessly, deeply, madly, because you are you.`.split('\n');
+
+    const container = document.getElementById('reasons-container');
+    reasons.forEach(reason => {
+      const div = document.createElement('div');
+      div.className = 'reason';
+      div.textContent = reason;
+      container.appendChild(div);
+    });
+
+    // Heart animation
+    const heartContainer = document.getElementById("heart-animation");
+    function createHeart() {
+      const heart = document.createElement("div");
+      heart.className = "heart";
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDuration = (Math.random() * 2 + 4) + "s";
+      heart.innerHTML = "❤️";
+      heartContainer.appendChild(heart);
+
+      setTimeout(() => {
+        heart.remove();
+      }, 6000);
+    }
+    setInterval(createHeart, 500);
+  </script>
+</body>
+</html>

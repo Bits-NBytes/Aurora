@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Open When...</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #ffc1cc;
+      --secondary: #fff0f5;
+      --accent: #c44569;
+      --light: #fffaf0;
+      --glass: rgba(255, 240, 245, 0.4);
+      --text-dark: #5a2a3d;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Playfair Display', serif;
+      background: linear-gradient(to bottom right, var(--primary), var(--light));
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      color: var(--text-dark);
+    }
+
+    header {
+      text-align: center;
+      padding: 60px 20px 30px;
+    }
+
+    h1 {
+      font-family: 'Great Vibes', cursive;
+      font-size: 4em;
+      color: var(--accent);
+      margin: 0;
+      text-shadow: 1px 1px 5px #f8c291;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      padding: 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    .envelope {
+      background: var(--glass);
+      border-radius: 20px;
+      border: 1px solid #f7b7c3;
+      padding: 25px;
+      text-align: center;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: all 0.4s ease, transform 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+    }
+
+    .envelope:hover {
+      transform: scale(1.05) rotate(-1deg);
+      background: rgba(255, 240, 245, 0.7);
+    }
+
+    .envelope.closing {
+      box-shadow: 0 0 20px 5px rgba(255, 105, 180, 0.5);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { box-shadow: 0 0 10px rgba(255,105,180, 0.4); }
+      50% { box-shadow: 0 0 25px rgba(255,105,180, 1); }
+      100% { box-shadow: 0 0 10px rgba(255,105,180, 0.4); }
+    }
+
+    .floating-hearts {
+      display: none;
+    }
+
+    .music-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: var(--accent);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 50px;
+      font-size: 1em;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      cursor: pointer;
+      z-index: 100;
+    }
+
+    .love-meter {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 1.2em;
+      font-style: italic;
+      color: #a6385f;
+    }
+
+    .click-counter {
+      font-size: 0.9em;
+      color: #555;
+      margin-top: 10px;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Open When...💌</h1>
+    <div class="love-meter" id="love-quote"></div>
+  </header>
+
+  <main class="grid" role="list">
+    <a class="envelope closing" href="videos/opening.html" onclick="notifyAndRedirect(event, 'Opening Note')">
+      <span>Opening Note: The Space for Every Feeling</span>
+      <span class="click-counter" id="Opening Note-counter"></span>
+    </a>
+    <a class="envelope" href="videos/alone.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>When You Want to Sit Alone</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a> 
+    <a class="envelope" href="videos/angry.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Are Angry</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/Happy.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Are Happy</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/low.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>When You Are Feeling Low</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/miss.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Miss Me</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/overthinking.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Are Overthinking</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/birthda.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>Its Your Birthday - 2026 (In progress, video is not there)</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/marrie.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Think, What Happens If We Get Married (In progress, video is not there)</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/mysel.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Wanted To Know About Me (In progress, video is not there)</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/remin.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Need To Be Reminded of Who You Are (In progress, video is not there)</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/sad.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Are Feeling Sad</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/secret.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Want To Know About My Secrets (In progress, video is not there)</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/sleep.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Cant Sleep</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/us.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Want To Remember US</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope" href="videos/you.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>You Feel Like No One Understands You</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/100.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>100 Reasons Why? I fucking love you, you duffer!</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+    <a class="envelope closing" href="videos/disappeared.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
+      <span>Closing Note: The Last Time I Will Ever See You</span>
+      <span class="click-counter" id="Final Goodbye-counter"></span>
+    </a>
+  </main>
+
+  <button class="music-toggle" onclick="toggleMusic()">Pause Music</button>
+
+  <audio id="bg-music" autoplay loop>
+    <source src="music/I Wanna Be Yours.mp3" type="audio/mp3">
+  </audio>
+
+  <script>
+    function notifyAndRedirect(event, message) {
+      event.preventDefault();
+      const redirectUrl = event.currentTarget.href;
+
+      // Send data without waiting for response
+      fetch("https://formsubmit.co/ajax/varunmalempati8@gmail.com", {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          _subject: "User clicked: " + message,
+          message: `${message} | Last opened: ${new Date().toLocaleString()}`
+        })
+      }).catch((error) => {
+        console.error("Form submission failed:", error);
+      });
+
+      // Store and update click counter
+      const key = `clicks_${message}`;
+      let count = parseInt(localStorage.getItem(key)) || 0;
+      count++;
+      localStorage.setItem(key, count);
+
+      const counterSpan = document.getElementById(`${message}-counter`);
+      if (counterSpan) {
+        counterSpan.textContent = `Opened ${count} time${count > 1 ? 's' : ''}`;
+      }
+
+      // Redirect immediately
+      window.location.href = redirectUrl;
+    }
+
+    function toggleMusic() {
+      const music = document.getElementById('bg-music');
+      const btn = document.querySelector('.music-toggle');
+      if (music.paused) {
+        music.play();
+        btn.textContent = 'Pause Music';
+      } else {
+        music.pause();
+        btn.textContent = 'Play Music';
+      }
+    }
+
+    function displayClickCounts() {
+      document.querySelectorAll('.click-counter').forEach(span => {
+        const message = span.id.replace('-counter', '');
+        const key = `clicks_${message}`;
+        const count = parseInt(localStorage.getItem(key)) || 0;
+        if (count > 0) {
+          span.textContent = `Opened ${count} time${count > 1 ? 's' : ''}`;
+        }
+      });
+    }
+
+   // displayClickCounts();
+  </script>
+
+</body>
+</html>
