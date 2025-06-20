@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Open When...</title>
-  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@500&display=swap" rel="stylesheet"/>
   <style>
     :root {
       --primary: #ffc1cc;
@@ -15,9 +16,7 @@
       --text-dark: #5a2a3d;
     }
 
-    * {
-      box-sizing: border-box;
-    }
+    * { box-sizing: border-box; }
 
     body {
       margin: 0;
@@ -26,7 +25,6 @@
       background: linear-gradient(to bottom right, var(--primary), var(--light));
       min-height: 100vh;
       overflow-x: hidden;
-      position: relative;
       color: var(--text-dark);
     }
 
@@ -63,7 +61,6 @@
       cursor: pointer;
       text-decoration: none;
       color: inherit;
-      position: relative;
     }
 
     .envelope:hover {
@@ -80,10 +77,6 @@
       0% { box-shadow: 0 0 10px rgba(255,105,180, 0.4); }
       50% { box-shadow: 0 0 25px rgba(255,105,180, 1); }
       100% { box-shadow: 0 0 10px rgba(255,105,180, 0.4); }
-    }
-
-    .floating-hearts {
-      display: none;
     }
 
     .music-toggle {
@@ -108,13 +101,6 @@
       font-style: italic;
       color: #a6385f;
     }
-
-    .click-counter {
-      font-size: 0.9em;
-      color: #555;
-      margin-top: 10px;
-      display: block;
-    }
   </style>
 </head>
 <body>
@@ -125,66 +111,24 @@
   </header>
 
   <main class="grid" role="list">
-    <a class="envelope closing" href="videos/opening.html" onclick="notifyAndRedirect(event, 'Opening Note')">
-      <span>Opening Note: The Space for Every Feeling</span>
-      <span class="click-counter" id="Opening Note-counter"></span>
-    </a>
-    <a class="envelope" href="videos/alone.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>When You Want to Sit Alone</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a> 
-    <a class="envelope" href="videos/angry.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Are Angry</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/Happy.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Are Happy</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope" href="videos/low.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>When You Are Feeling Low</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/miss.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Miss Me</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope" href="videos/overthinking.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Are Overthinking</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/birthda.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>Its Your Birthday - 2026 (In progress, video is not there)</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/marrie.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Think, What Happens If We Get Married (In progress, video is not there)</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope" href="videos/sad.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Are Feeling Sad</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope" href="videos/sleep.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Cant Sleep</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/us.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Want To Remember US</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope" href="videos/you.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>You Feel Like No One Understands You</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/100.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>100 Reasons Why? I fucking love you, you duffer!</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
-    <a class="envelope closing" href="videos/disappeared.html" onclick="notifyAndRedirect(event, 'Final Goodbye')">
-      <span>Closing Note: The Last Time I Will Ever See You</span>
-      <span class="click-counter" id="Final Goodbye-counter"></span>
-    </a>
+    <a class="envelope closing" href="videos/opening.html" onclick="notifyAndRedirect(event, 'Opening Note: The Space for Every Feeling')">Opening Note: The Space for Every Feeling</a>
+    <a class="envelope" href="videos/alone.html" onclick="notifyAndRedirect(event, 'When You Want to Sit Alone')">When You Want to Sit Alone</a>
+    <a class="envelope" href="videos/angry.html" onclick="notifyAndRedirect(event, 'You Are Angry')">You Are Angry</a>
+    <a class="envelope closing" href="videos/Happy.html" onclick="notifyAndRedirect(event, 'You Are Happy')">You Are Happy</a>
+    <a class="envelope" href="videos/low.html" onclick="notifyAndRedirect(event, 'When You Are Feeling Low')">When You Are Feeling Low</a>
+    <a class="envelope closing" href="videos/miss.html" onclick="notifyAndRedirect(event, 'You Miss Me')">You Miss Me</a>
+    <a class="envelope" href="videos/overthinking.html" onclick="notifyAndRedirect(event, 'You Are Overthinking')">You Are Overthinking</a>
+    <a class="envelope closing" href="videos/birthda.html" onclick="notifyAndRedirect(event, 'Its Your Birthday - 2026 (In progress, video is not there)')">Its Your Birthday - 2026 (In progress, video is not there)</a>
+    <a class="envelope closing" href="videos/marrie.html" onclick="notifyAndRedirect(event, 'You Think, What Happens If We Get Married (In progress, video is not there)')">You Think, What Happens If We Get Married (In progress, video is not there)</a>
+    <a class="envelope" href="videos/mysel.html" onclick="notifyAndRedirect(event, 'You Wanted To Know About Me (In progress, video is not there)')">You Wanted To Know About Me (In progress, video is not there)</a>
+    <a class="envelope" href="videos/remin.html" onclick="notifyAndRedirect(event, 'You Need To Be Reminded of Who You Are (In progress, video is not there)')">You Need To Be Reminded of Who You Are (In progress, video is not there)</a>
+    <a class="envelope" href="videos/sad.html" onclick="notifyAndRedirect(event, 'You Are Feeling Sad')">You Are Feeling Sad</a>
+    <a class="envelope closing" href="videos/secret.html" onclick="notifyAndRedirect(event, 'You Want To Know About My Secrets (In progress, video is not there)')">You Want To Know About My Secrets (In progress, video is not there)</a>
+    <a class="envelope" href="videos/sleep.html" onclick="notifyAndRedirect(event, 'You Cant Sleep')">You Cant Sleep</a>
+    <a class="envelope closing" href="videos/us.html" onclick="notifyAndRedirect(event, 'You Want To Remember US')">You Want To Remember US</a>
+    <a class="envelope" href="videos/you.html" onclick="notifyAndRedirect(event, 'You Feel Like No One Understands You')">You Feel Like No One Understands You</a>
+    <a class="envelope closing" href="videos/100.html" onclick="notifyAndRedirect(event, '100 Reasons Why? I fucking love you, you duffer!')">100 Reasons Why? I fucking love you, you duffer!</a>
+    <a class="envelope closing" href="videos/disappeared.html" onclick="notifyAndRedirect(event, 'Closing Note: The Last Time I Will Ever See You')">Closing Note: The Last Time I Will Ever See You</a>
   </main>
 
   <button class="music-toggle" onclick="toggleMusic()">Pause Music</button>
@@ -198,33 +142,15 @@
       event.preventDefault();
       const redirectUrl = event.currentTarget.href;
 
-      // Send data without waiting for response
-      fetch("https://formsubmit.co/ajax/varunmalempati8@gmail.com", {
+      fetch("https://formspree.io/f/mgvylkal", {
         method: "POST",
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          _subject: "User clicked: " + message,
-          message: `${message} | Last opened: ${new Date().toLocaleString()}`
+          _subject: `User clicked: ${message}`,
+          message: `User clicked: ${message} at ${new Date().toLocaleString()}`
         })
-      }).catch((error) => {
-        console.error("Form submission failed:", error);
-      });
+      }).catch(err => console.error("Formspree error:", err));
 
-      // Store and update click counter
-      const key = `clicks_${message}`;
-      let count = parseInt(localStorage.getItem(key)) || 0;
-      count++;
-      localStorage.setItem(key, count);
-
-      const counterSpan = document.getElementById(`${message}-counter`);
-      if (counterSpan) {
-        counterSpan.textContent = `Opened ${count} time${count > 1 ? 's' : ''}`;
-      }
-
-      // Redirect immediately
       window.location.href = redirectUrl;
     }
 
@@ -239,19 +165,6 @@
         btn.textContent = 'Play Music';
       }
     }
-
-    function displayClickCounts() {
-      document.querySelectorAll('.click-counter').forEach(span => {
-        const message = span.id.replace('-counter', '');
-        const key = `clicks_${message}`;
-        const count = parseInt(localStorage.getItem(key)) || 0;
-        if (count > 0) {
-          span.textContent = `Opened ${count} time${count > 1 ? 's' : ''}`;
-        }
-      });
-    }
-
-   // displayClickCounts();
   </script>
 
 </body>
